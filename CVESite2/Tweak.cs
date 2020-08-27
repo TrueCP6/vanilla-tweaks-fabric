@@ -15,7 +15,7 @@ namespace CVESite2
 
     public enum TweakCategory
     {
-        Optimisation,
+        OptiFineReplacement,
         SurvivalQoL,
         GeneralQoL,
         Redstone,
@@ -78,8 +78,12 @@ namespace CVESite2
         public static Tweak[] All;
         public static Dictionary<string, bool> Dict = new Dictionary<string, bool>();
 
-        public static void Toggle(string reference) =>
+        public static void Toggle(string reference)
+        {
             Dict[reference] = !Dict[reference];
+            foreach (string incompat in All.First(t => t.Reference == reference).Incompatibilites)
+                Dict[incompat] = false;
+        }
 
         public static string GetStyle(string reference) =>
             Dict[reference] ? "background-color: #264d00;" : "background-color: #800000;";
