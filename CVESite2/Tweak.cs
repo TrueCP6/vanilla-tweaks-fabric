@@ -30,12 +30,12 @@ namespace CVESite2
         public string Reference;
         public string Name;
         public string Description;
-        public CurseforgeMod Mod;
+        public CurseforgeMod[] Mod;
         public TweakType Type;
         public TweakCategory Category;
         public string[] Incompatibilites;
 
-        public Tweak(string reference, string name, string description, CurseforgeMod mod, TweakType type, TweakCategory category, params string[] incompatibilites)
+        public Tweak(string reference, string name, string description, CurseforgeMod[] mod, TweakType type, TweakCategory category, params string[] incompatibilites)
         {
             Reference = reference;
             Name = name;
@@ -52,13 +52,18 @@ namespace CVESite2
             foreach (string t in text.Trim('`', '~').Split('~'))
             {
                 string[] items = t.Split('`').Select(s => s.Trim('\r', '\n')).ToArray();
-                if (Mods.All.Any(m => items[3] == m.Reference && m.FileID != 0)) //if the file id is 0 the mod does not have an updated version and thus the tweak will not be added
+                CurseforgeMod[] mods =
+                    items[3].Split(',')
+                    .Where(s => Mods.All.Any(m => m.Reference == s))
+                    .Select(s => Mods.All.First(m => m.Reference == s))
+                    .ToArray();
+                if (mods.Length > 0)
                 {
                     output.Add(new Tweak(
                         items[0],
                         items[1],
                         items[2],
-                        Mods.All.First(m => items[3] == m.Reference),
+                        mods,
                         (TweakType)Convert.ToInt32(items[4]),
                         (TweakCategory)Convert.ToInt32(items[5]),
                         items.Length > 6 ? items[6].Split(',') : new string[0]

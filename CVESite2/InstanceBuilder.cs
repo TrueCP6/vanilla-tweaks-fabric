@@ -30,7 +30,9 @@ namespace CVESite2
 
         private static CurseforgeMod[] GetModList(string modLoader, Tweak[] tweaks)
         {
-            List<CurseforgeMod> list = tweaks.Select(t => t.Mod).ToList();
+            List<CurseforgeMod> list = new List<CurseforgeMod>();
+            foreach (Tweak tweak in tweaks)
+                list.AddRange(tweak.Mod);
             foreach (CurseforgeMod mod in list.ToArray())
                 list.AddRange(mod.Dependencies);
             if (modLoader.StartsWith("forge"))
@@ -38,14 +40,14 @@ namespace CVESite2
             return list.Distinct().Where(m => m.ProjectID != 0).ToArray(); //if the project id is 0 the mod does not need to be downloaded via curseforge (e.g. vanilla tweaks)
         }
 
-        private static (string File, byte[] Content) GetManifestEntry(string name, string version, string author, string minecraftVersion, string modLoader, CurseforgeMod[] mods) =>
+        private static (string File, byte[] Content) GetManifestEntry(string name, string version, string author, string minecraftVersion, string modLoader, params CurseforgeMod[] mods) =>
             ("manifest.json", Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(new ManifestObject(name, version, author, minecraftVersion, modLoader, mods), Constants.DefaultFormatting)));
 
         private static (string File, byte[] Content)[] GetConfigEntries(Tweak[] tweaks, CurseforgeMod[] mods)
         {
             List<(string File, byte[] Content)> entries = new List<(string File, byte[] Content)>();
             foreach (CurseforgeMod mod in mods)
-                entries.AddRange(mod.ApplyTweaks(tweaks.Where(t => mod.Reference == t.Mod.Reference).Select(t => t.Reference).ToArray()));
+                entries.AddRange(mod.ApplyTweaks(tweaks.Where(t => t.Mod.Contains(mod)).Select(t => t.Reference).ToArray()));
             return entries.ToArray();
         }
     }
