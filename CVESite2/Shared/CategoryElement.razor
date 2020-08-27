@@ -1,0 +1,22 @@
+﻿<h1>@Name</h1>
+
+<div style="overflow: hidden">
+@foreach (Tweak tweak in Tweak.All.Where(t => t.Category == Category))
+{
+    <div
+         @onclick=@(() => Tweak.Toggle(tweak.Reference))
+         @onmouseover=@(() => HoverOver(tweak))
+         style="@Tweak.GetStyle(tweak.Reference)"
+         class="tweak"
+    >
+        <img src="images/@(tweak.Mod.Reference).png">
+        <p>@tweak.Name</p>
+    </div>
+}
+</div>
+
+@code {
+    [Parameter] public string Name { get; set; }
+    [Parameter] public TweakCategory Category { get; set; }
+    [Parameter] public Action<Tweak> HoverOver { get; set; }
+}

@@ -1,0 +1,669 @@
+﻿sheep-consistency
+`Accurate Shaved Sheep Colours
+`<img src="https://i.imgur.com/hPfME5T.png">
+Shaved sheep's wool colour will be accurate to their normal colour.
+`sheep-consistency
+`1
+`5
+~
+
+tweakF3Cursor
+`Always Show F3 Cursor
+`Enables always showing the F3 cursor.
+`tweakeroo
+`1
+`2
+~
+
+tweakAngelBlock
+`Angel Block
+`Place blocks in mid air in creative.
+`tweakeroo
+`1
+`2
+~
+
+bamboo-tweaks
+`Bamboo Decoration Blocks
+`<img src="https://i.imgur.com/DuM6ox0.png">
+Adds a bamboo torch, spike, rod, block, ladder, fence, fence gate and fence wall.
+`bamboo-tweaks
+`2
+`5
+~
+
+beenfo-gui
+`Bee Nest/Hive Bee Count GUI
+`<img src="https://media.forgecdn.net/attachments/302/351/screenshot_2020-07-13_11-13-48.png">
+Right click on a bee hive or nest to view how many bees are inside and how much honey it contains.
+`beenfo
+`2
+`1
+~
+
+beenfo-tooltip
+`Bee Nest/Hive Bee Count Item Tooltip
+`<img src="https://media.forgecdn.net/attachments/274/614/beenfo-tooltip.png">
+Hover over a bee nest or hive to view how many bees and how much honey is inside.
+`beenfo
+`1
+`1
+~
+
+not-enough-crashes
+`Better Crash Handling
+`<img src="https://media.forgecdn.net/attachments/271/740/crash.png">
+If your game crashes while playing, you will be sent back to the main menu instead of the launcher.
+`not-enough-crashes
+`1
+`2
+~
+
+sodium
+`Better FPS
+`<img src="https://i.imgur.com/KarVVbr.png">
+Optimises the game's rendering and massively improves FPS on dedicated GPUs.
+`sodium
+`1
+`0
+~
+
+mouse-wheelie
+`Better Inventory Management
+`<ul>
+<li>When hovering over items you can scroll up and down to send single items up and down.</li>
+<li>When holding control you can move all stacks of the same type of item.</li>
+<li>When you're in scrollable inventories you can hold alt to prevent scrolling items.</li>
+<li>When you're sending items via shift-leftclick you can now hold both buttons to send all the stacks you're hovering over.</li>
+<li>Hold alt-leftclick to drop items quickly.</li>
+<li>When you're in the creative inventory and hover over the tab icons you can scroll through all the creative tabs and pages.</li>
+<li>In recipe books you can hover over the recipe grid to scroll through the pages and hover over the recipe group tabs to scroll through them.</li>
+<li>Sort inventories by clicking with your mouse wheel<ul>
+    <li>By default sorts by raw id (will most likely group by mods and similar items)</li>
+    <li>Hold shift while clicking to sort by quantity</li>
+    <li>Hold control while clicking to sort by alphabet</li></ul></li>
+<li>Press the swap key in any inventory to swap with the offhand</li>
+<li>Let your slots be automagically refilled from your inventory!</li>
+<li>Pick the matching tools for blocks by either sneaking while picking the block or by holding a tool. (this is configurable)</li>
+<li>Right-click trades or recipes to directly apply the crafting. When holding shift it will craft/trade a full stack.</li>
+</ul>
+`mouse-wheelie
+`3
+`1
+~
+
+lithium
+`Better Server Performance
+`<img src="https://i.imgur.com/aPu88TC.png">
+Improve server MSPT and TPS through a number of optimisations without changing any mechanics.
+`lithium
+`0
+`0
+~
+
+command-macros
+`Bind Any Command To A Hotkey
+`<img src="https://raw.githubusercontent.com/kyrptonaught/CMDKeybinds/master/image.png">
+To add and edit macros go to Mods -> Command Macros and click the options icon in the top right.
+`command-macros
+`1
+`4
+~
+
+block-grid
+`Block Grid Overlay
+`Overlays a block grid. Toggleable with F3 + Y.
+`minihud
+`1
+`4
+~
+
+chat-up!
+`Chat Does Not Obscure Armor Bar
+`<img src="https://raw.githubusercontent.com/gnembon/chat-up/master/chat-up.png">
+Moves chat up by 10 pixels so it does not obscure the armor bar.
+`chat-up!
+`1
+`1
+~
+
+tweakChatTimestamp
+`Chat Timestamps
+`Adds timestamps to messages sent in chat.
+`tweakeroo
+`1
+`2
+~
+
+clientChunkEntityDupeFix
+`Chunk Entity Dupe Fix
+`Fixes an issue where the client would duplicate entities when recieving chunk packets.
+`tweakeroo
+`1
+`7
+~
+
+colorful-campfire-smoke
+`Colourful Campfire Smoke
+`<img src="https://media.giphy.com/media/URkCdfxP3vn41HPfif/giphy.gif">
+When a campfire is powered, its smoke will become the colour of the block underneath it.
+`colorful-campfire-smoke
+`1
+`5
+~
+
+mini-f3
+`Concise F3 HUD
+`Shows the following information by default:
+<ul>
+<li>Biome</li>
+<li>Coordinates</li>
+<li>FPS</li>
+<li>Light level</li>
+<li>Memory Usage</li>
+<li>Ping to server</li>
+<li>Server TPS and MSPT</li>
+<li>Whether the player is in a slime chunk</li>
+<li>Player speed</li>
+<li>World time</li>
+</ul>
+To configure the information it shows: H + c -> Info Toggles
+`minihud
+`1
+`2
+~
+
+lamdacontrols
+`Controller Support
+`<img src="https://media.forgecdn.net/attachments/277/282/2020-02-01_00.png">
+Play the game and navigate the menus with your controller. To configure your controller visit the controls menu and open the options menu.
+`lambdacontrols
+`1
+`4
+~
+
+tweakCustomFlatPresets
+`Custom Superflat Presets
+`To add presets: X + C -> Lists -> flatWorldPresets
+`tweakeroo
+`1
+`2
+~
+
+debug-overlays
+`Debug Overlays
+`Adds the following debug overlays: chunk info, chunk occlusion, collision boxes, neighbors update, pathfinding, solid face, and water. These are each toggleable via a hotkey which can be bound at H + C -> Renderer Hotkeys.
+`minihud
+`1
+`4
+~
+
+profilerChartFix
+`Debug Profiler Chart Fix
+`Fixes the debug profiler chart that was broken in 1.14.4.
+`tweakeroo
+`1
+`7
+~
+
+disableBossFog
+`Disable Boss Fog
+`Disable the fog caused by bosses.
+`tweakeroo
+`1
+`1
+~
+
+disableNetherFog
+`Disable Nether Fog
+`Does what it says on the tin.
+`tweakeroo
+`1
+`2
+~
+
+disableRenderDistanceFog
+`Disable Render Distance Fog
+`Disables the fog at the edge of your render distance.
+`tweakeroo
+`1
+`2
+~
+
+disableSlimeBlockSlowdown
+`Disable Slime Block Slowdown
+`The slowing effect of slime blocks is much less pronounced. Makes using slime blocks as scaffolding more viable.
+`tweakeroo
+`1
+`1
+~
+
+disableVillagerTradeLocking
+`Disable Trade Locking
+`Villagers will no longer lock their trades.
+`tweakeroo
+`4
+`1
+~
+
+disableWallUnsprint
+`Disable Wall Unsprint
+`Touching a wall doesn't revert you back to walking.
+`tweakeroo
+`1
+`1
+~
+
+craftpresence
+`Discord Rich Presence
+`<img src="https://media.forgecdn.net/attachments/231/727/sp_overworld.png">
+Integration with Discord Rich Presence.
+`craftpresence
+`1
+`2
+~
+
+elytraFix
+`Elytra Deployment/Landing Fix
+`Fixes a bug with Elytra deployment and landing.
+`tweakeroo
+`1
+`7
+~
+
+tweakCommandBlockExtraFields
+`Extra Command Block Fields
+`Adds extra fields to the command block GUI which allow changing the name of the command block among other things.
+`tweakeroo
+`1
+`2
+~
+
+more-overlays
+`Extra Overlays
+`Adds the following overlays: random tick range, region file, slime chunks, spawnable column heights and spawn chunks. These are each toggleable via a hotkey which can be bound at H + C -> Renderer Hotkeys.
+`minihud
+`1
+`4
+~
+
+phosphor
+`Faster Chunk Loading
+`<img src="https://i.imgur.com/CoQk2e7.png">
+Optimises the lighting engine which allows the game to load chunks faster.
+`phosphor
+`2
+`0
+~
+
+where-is-it
+`Find Items In Nearby Inventories
+`<img src="https://media.forgecdn.net/attachments/288/370/pic.PNG">
+Press Y while hovering over an item in your inventory to highlight any nearby inventories that contain that item.
+`where-is-it
+`2
+`1
+~
+
+convenient-mobgriefing
+`Finer mobGriefing Control
+`Splits the <code>mobGriefing</code> gamerule into 4 separate gamerules:
+<ul>
+<li><code>mobGriefing</code> allows creepers and ghasts to blow up blocks and endermen to pick up and put down blocks.</li>
+<li><code>mobGriefingLenient</code> allows villagers to harvest crops, sheep to eat grass and generally other things that aren't annoying.</li>
+<li><code>mobGriefingWither</code> allows the Wither to destroy blocks</li>
+<li><code>mobGriefingDragon</code> allows the Ender Dragon to destroy blocks</li>
+</ul>
+`convenient-mobgriefing
+`0
+`1
+~
+
+pling
+`Finished Loading Sound
+`Plays a pling sound when the game finished loading.
+`pling
+`1
+`2
+~
+
+tweakFlySpeed
+`Fly Speed Presets
+`Change your fly speed using NUMPAD 1-4.
+`tweakeroo
+`1
+`2
+~
+
+data-loader
+`Global Datapacks
+`<img src="https://i.imgur.com/Gy7gmbQ.png">
+Any datapacks placed in <your-minecraft-folder>/config/datapacks will be loaded upon entering any world.
+`data-loader
+`0
+`4
+~
+
+hide-tutorials
+`Hide Tutorial And Recipe Pop Ups
+`The game won't tell you how to open your inventory or how to craft a boat.
+`i-am-very-smart
+`1
+`2
+~
+
+tweakHotbarScroll
+`Hotbar Scrolling
+`Scroll between hotbars with down arrow.
+`tweakeroo
+`1
+`2
+~
+
+infinity-fix
+`Infinity Bows Don't Need Arrows
+`Infinity bows will still function without any arrows in the player's inventory.
+`infinity-fix
+`1
+`1
+~
+
+tweakItemUnstackingProtection
+`Item Unstacking Protection
+`Certain items won't spill out of your inventory when unstacking them. This is to stop throwing buckets into lava.
+`tweakeroo
+`1
+`1
+~
+
+light-level
+`Light Level Overlay
+`Overlays block light level. Press F7 to toggle.
+`minihud
+`1
+`4
+~
+
+mod-menu
+`Mod Menu
+`<img src="https://i.imgur.com/wp83YOP.png">
+Adds a menu for viewing and configuring the mods you have installed.
+`mod-menu
+`1
+`4
+~
+
+tweakRemoveOwnPotionEffects
+`No Potion Particles
+`Your potion particles will not be visible in first person.
+`tweakeroo
+`1
+`2
+~
+
+offlineskins
+`Offline Player Skins
+`Caches your skin for offline play.
+`offlineskins
+`1
+`2
+~
+
+gamemodeoverhaul
+`Old Gamemode And Difficulty Numbers
+`/gamemode 1 and /difficulty 0 are valid again.
+`gamemodeoverhaul
+`0
+`2
+~
+
+tweakPlayerInventoryPeek
+`Player Inventory Peek
+`Hold I when looking at a player to preview their inventory.
+`tweakeroo
+`1
+`1
+~
+
+tweakPotionWarning
+`Potion Warning
+`Warns you if your potions are about to run out.
+`tweakeroo
+`1
+`1
+~
+
+fabric-chunk-pregenerator
+`Pregenerate Chunks
+`Use /pregen start <chunk-radius> to pregenerate areas.
+`fabric-chunk-pregenerator
+`0
+`4
+~
+
+tweakInventoryPreview
+`Preview Block And Entity Inventories
+`Hold I when hovering over a block or entity to preview its inventory.
+`tweakeroo
+`4
+`2
+~
+
+tweakMapPreview
+`Preview Maps In Inventory
+`Hold shift over a map in your inventory to preview it.
+`tweakeroo
+`1
+`1
+~
+
+tweakPrintDeathCoordinates
+`Print Death Coordinates
+`When you die your death coordinates will be printed to chat. This message is only visible to you.
+`tweakeroo
+`1
+`1
+~
+
+ravagerClientBlockBreakFix
+`Ravager Client Block Breaking Fix
+`Stops ravagers from breaking blocks on the client which prevents ghost blocks and desync.
+`tweakeroo
+`1
+`7
+~
+
+tweakLavaVisibility
+`Reduced Lava Fog
+`When the player has a water breathing effect applied lava fog is greatly reduced.
+`tweakeroo
+`1
+`1
+~
+
+dynamic-sound-filters
+`Reverb In Caves
+`<iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/mV0j4EIdLE8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Sounds in caves will have added reverb to add to the atmosphere, sounds will be muffled when underwater and sounds behind walls will sound quieter.
+`dynamic-sound-filters
+`1
+`5
+~
+
+litematica
+`Schematics
+`<img src="https://media.forgecdn.net/attachments/274/411/2020-01-02_21.png">
+Build large and complex structures designed in creative easier in survival.
+`litematica
+`1
+`4
+~
+
+screenshot-to-clipboard
+`Screenshots Get Copied To Clipboard
+`Screenshots you take will be copied to clipboard for easy sharing on platforms like Discord.
+`screenshot-to-clipboard
+`1
+`2
+~
+
+tweakShulkerBoxDisplay
+`Shulker Box Preview
+`Preview the content of a shulker box in you inventory by holding shift over it.
+`tweakeroo
+`1
+`2
+~
+
+structure-overlay
+`Structure Bounding Box Overlay
+`Displays the borders of structures upon pressing F3 + J.
+`minihud
+`1
+`4
+~
+
+tweakTabCompleteCoordinate
+`Tab Complete Coordinates
+`Uses the players position.
+`tweakeroo
+`1
+`2
+~
+
+tweakSpectatorTeleport
+`Teleport To Other Spectators
+`Spectators can teleport to other spectators.
+`tweakeroo
+`1
+`2
+~
+
+tileEntityUnloadOptimization
+`Tile Entity Unloading Optimisations
+`Optimises the unloading of tile entities. Can greatly improve performance if many tile entities are loading/unloading at once.
+`tweakeroo
+`1
+`0
+~
+
+fake-sneaking
+`Toggle Fake Sneaking
+`Allows moving at full speed without allowing the player to fall off edges. To toggle this: X + C -> Tweak Toggles -> tweakFakeSneaking
+`tweakeroo
+`1
+`1
+~
+
+fast-block-placement
+`Toggle Fast Block Placement
+`When enabled the game will place a block every time your cursor moves on to a new block when holding right click. To toggle this: X + C -> Tweak Toggles -> tweakFastBlockPlacement
+`tweakeroo
+`1
+`2
+~
+
+disable-observer
+`Toggle Observer Updates
+`When enabled observers will not update. Useful for building large flying machines. To enable: X + C -> TweakNo Toggles -> disableObserver
+`tweakeroo
+`4
+`2
+~
+
+swap-almost-broken-tools
+`Toggle Swap Almost Broken Tools
+`When enabled tools that are nearly broken will be swapped off of. To enable: X + C -> Tweak Toggles -> tweakSwapAlmostBrokenTools
+`tweakeroo
+`1
+`1
+~
+
+toggle-toggle
+`Toggle Toggle Sprint And Sneak
+`Adds 2 keybinds that allow toggling between toggle and hold sprint and sneak.
+`toggle-toggle
+`1
+`1
+~
+
+dynamic-fps
+`Unfocused Window Optimisations
+`Makes Minecraft hog less GPU resources when the window is not focused by capping FPS to a very low value.
+`dynamic-fps
+`1
+`0
+~
+
+unlock-all-recipes
+`Unlock All Recipes
+`All recipes will automatically unlock on starting the game.
+`i-am-very-smart
+`0
+`1
+~
+
+chatcalc
+`Use Chat As A Calculator
+`<img src="https://media.giphy.com/media/hWXaAa4LVP3W7nJkpN/giphy.gif">
+Tab autocomplete for maths equations:
+4*4 -> TAB -> 16
+5*5= -> TAB -> 5*5=25
+Supports basic math operations, exponents, sqrt() and basic trigonometry functions.
+`chatcalc
+`1
+`4
+~
+
+appleskin-food-stats
+`View Food Stats
+`<img src="https://camo.githubusercontent.com/61132c47ef7a1f43467d66f419df44bacf8d55c0/687474703a2f2f692e696d6775722e636f6d2f6675726f4141692e706e67">
+The stats of a food will be displayed as the item's tooltip.
+`appleskin
+`1
+`1
+~
+
+horse-stats-vanilla
+`View Horse Stats
+`<img src="https://media.forgecdn.net/attachments/268/918/donkey_inv.png">
+The running speed, jumping height and health of horses and donkeys are visible in their inventories.
+`horse-stats-vanilla
+`1
+`1
+~
+
+appleskin-saturation
+`View Your Saturation Level
+`<img src="https://camo.githubusercontent.com/bde4595cfdcdd4e16a4b65955e9c1453b431b797/687474703a2f2f7a697070792e6766796361742e636f6d2f5368696d6d6572696e67596561726c794369636164612e676966">
+Your saturation level will be visualised in the hunger bar.
+`appleskin
+`3
+`1
+~
+
+worldedit
+`WorldEdit
+`<img src="https://media.forgecdn.net/avatars/12/134/635515985405616565.png">
+Use WorldEdit to build and terraform faster and easier.
+`worldedit
+`0
+`4
+~
+
+euclid
+`WorldEdit Selection Overlay
+`<img src="https://media.forgecdn.net/avatars/242/481/637134541213387899.png">
+Displays your WorldEdit selection as a wireframe in your world.
+`euclid
+`1
+`4
+~
+
+tweakZoom
+`Z To Zoom
+`Press Z to zoom.
+`tweakeroo
+`1
+`2
+~

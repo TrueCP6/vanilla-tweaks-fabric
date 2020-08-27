@@ -1,0 +1,57 @@
+﻿@page "/"
+@inject HttpClient Http
+@inject IJSRuntime js
+
+<div class="main">
+    @if (Initialised)
+    {
+        <CategoryElement Name="Optimisation" Category=@TweakCategory.Optimisation HoverOver=@(t => sidebar.HoverOver(t)) />
+        <CategoryElement Name="Survival Quality Of Life" Category=@TweakCategory.SurvivalQoL HoverOver=@(t => sidebar.HoverOver(t)) />
+        <CategoryElement Name="General Quality Of Life" Category=@TweakCategory.GeneralQoL HoverOver=@(t => sidebar.HoverOver(t)) />
+        <CategoryElement Name="Redstone" Category=@TweakCategory.Redstone HoverOver=@(t => sidebar.HoverOver(t)) />
+        <CategoryElement Name="Tools" Category=@TweakCategory.Tools HoverOver=@(t => sidebar.HoverOver(t)) />
+        <CategoryElement Name="Fixes" Category=@TweakCategory.Fixes HoverOver=@(t => sidebar.HoverOver(t)) />
+        <CategoryElement Name="Aesthetic" Category=@TweakCategory.Aesthetic HoverOver=@(t => sidebar.HoverOver(t)) />
+        <CategoryElement Name="Vanilla Plus" Category=@TweakCategory.VanillaPlus HoverOver=@(t => sidebar.HoverOver(t)) />
+
+        <button @onclick="DownloadForgeOnlyInstance" class="btn-primary">Download For Forge Only</button>
+        <button @onclick="DownloadFabricSupportingInstance" class="btn-primary">Download For Fabric Supporting</button>
+    }
+    else
+    {
+        <p><em>Loading Tweaks...</em></p>
+    }
+</div>
+
+<Sidebar @ref="sidebar"/>
+
+@code {
+    private bool Initialised = false;
+    private Sidebar sidebar;
+
+    protected override async Task OnInitializedAsync()
+    {
+        string tweaks = await Http.GetStringAsync("tweaks.txt");
+        Tweak.All = Tweak.ParseFromText(tweaks).OrderBy(t => t.Name).ToArray();
+        foreach (Tweak t in Tweak.All)
+            Tweak.Dict.Add(t.Reference, false);
+        ModConfig.MiniHUDDefault = await Http.GetStringAsync("DefaultModConfigs/minihud.json");
+        ModConfig.TweakerooDefault = await Http.GetStringAsync("DefaultModConfigs/tweakeroo.json");
+        Initialised = true;
+    }
+
+    private void DownloadForgeOnlyInstance() => DownloadInstance(Constants.ForgeLoader);
+    private void DownloadFabricSupportingInstance() => DownloadInstance(Constants.FabricLoader);
+
+    private void DownloadInstance(string modLoader)
+    {
+        byte[] content = InstanceBuilder.Build(Constants.Name, Constants.ProfileVersion, Constants.Author, Constants.MinecraftVersion, modLoader, Tweak.GetAllEnabled());
+        Console.WriteLine("Created instance");
+        DownloadFile(Constants.Name + ".zip", content); //this is async but thats fine
+    }
+
+    private async Task DownloadFile(string name, byte[] content)
+    {
+        await js.InvokeAsync<object>("saveAsFile", name, Convert.ToBase64String(content));
+    }
+}

@@ -1,0 +1,20 @@
+﻿<div class="sidebar">
+    @if (LastHover != null)
+    {
+        @((MarkupString)LastHover.Description)
+    }
+    else
+    {
+        <p>Hover over a tweak for a more detailed description on what it does and how to use it.</p>
+    }
+</div>
+
+@code {
+    private Tweak LastHover;
+
+    public void HoverOver(Tweak tweak)
+    {
+        LastHover = tweak;
+        StateHasChanged();
+    }
+}
