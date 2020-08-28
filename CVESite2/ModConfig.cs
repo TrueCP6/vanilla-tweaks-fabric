@@ -42,6 +42,7 @@ namespace CVESite2
         {
             string[] file = TweakerooDefault.Split(Environment.NewLine);
 
+            //TODO: improve this
             for (int i = 0; i < file.Length; i++)
                 if (tweaks.Any(t => file[i].Contains(t)))
                     file[i] = file[i].Replace("false", "true");
@@ -55,14 +56,38 @@ namespace CVESite2
                 config.GenericHotkeys.flyPreset3.keys = "KP_3";
                 config.GenericHotkeys.flyPreset4.keys = "KP_4";
             }
-            if (tweaks.Contains("tweakHotbarScroll"))
+            if (tweaks.Contains("inventory-management"))
+            {
+                config.TweakToggles.tweakHotbarScroll = true;
                 config.GenericHotkeys.hotbarScroll.keys = "DOWN";
-            if (tweaks.Contains("tweakInventoryPreview"))
-                config.GenericHotkeys.inventoryPreview.keys = "I";
+            }
             if (tweaks.Contains("tweakZoom"))
+            {
                 config.GenericHotkeys.zoomActivate.keys = "Z";
-            if (tweaks.Contains("tweakPlayerInventoryPeek"))
+            }
+            if (tweaks.Contains("client-optimisations"))
+            {
+                config.Fixes.tileEntityUnloadOptimization = true;
+            }
+            if (tweaks.Contains("inventory-peek"))
+            {
+                config.GenericHotkeys.inventoryPreview.keys = "I";
                 config.GenericHotkeys.playerInventoryPeek.keys = "I";
+                config.TweakToggles.tweakPlayerInventoryPeek = true;
+                config.TweakToggles.tweakInventoryPreview = true;
+            }
+            if (tweaks.Contains("inventory-preview"))
+            {
+                config.TweakToggles.tweakMapPreview = true;
+                config.TweakToggles.tweakShulkerBoxDisplay = true;
+            }
+            if (tweaks.Contains("client-fixes"))
+            {
+                config.Fixes.clientChunkEntityDupeFix = true;
+                config.Fixes.profilerChartFix = true;
+                config.Fixes.elytraFix = true;
+                config.Fixes.ravagerClientBlockBreakFix = true;
+            }
 
             return new (string File, byte[] Content)[] {
                 ("config/tweakeroo.json", Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(config, Constants.DefaultFormatting)))
@@ -87,15 +112,13 @@ namespace CVESite2
                 config.InfoTypeToggles.infoTimeDayModulo = true;
                 config.Generic.enabled = true;
             }
-            if (tweaks.Contains("structure-overlay"))
+            if (tweaks.Contains("overlays"))
             {
                 config.RendererHotkeys.overlayStructureMainToggle.keys = "F3,J";
                 config.StructureToggles = JsonConvert.DeserializeObject(JsonConvert.SerializeObject(config.StructureToggles).Replace("false", "true"));
-            }
-            if (tweaks.Contains("block-grid"))
                 config.RendererHotkeys.overlayBlockGrid.keys = "F3,Y";
-            if (tweaks.Contains("light-level"))
                 config.RendererHotkeys.overlayLightLevel.keys = "F7";
+            }
 
             return new (string File, byte[] Content)[] {
                 ("config/minihud.json", Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(config, Constants.DefaultFormatting)))

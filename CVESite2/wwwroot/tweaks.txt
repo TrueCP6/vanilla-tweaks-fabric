@@ -1,4 +1,124 @@
-﻿sheep-consistency
+﻿client-fixes
+`Client Side Bug Fixes
+`Fixes the following bugs:
+<ul>
+<li>The debug profiler chart that was broken in 1.14.4</li>
+<li>An issue where the client would duplicate entities when recieving chunk packets</li>
+<li>A bug with Elytra deployment and landing</li>
+<li>Stops ravagers from breaking blocks on the client which prevents ghost blocks and desync</li>
+</ul>
+`tweakeroo
+`1
+`7
+~
+
+overlays
+`All The Overlays
+`Adds the following overlays which are already bound:
+<ul>
+<li>Block grid (F3 + Y)</li>
+<li>Light level (F7)</li>
+<li>Structure bounding boxes (F3 + J)</li>
+</ul>
+Also adds the following overlays which can be bound by pressing H + C -> Renderer Hotkeys
+<ul>
+<li>Chunk info debug</li>
+<li>Chunk occlusion debug</li>
+<li>Collision box debug</li>
+<li>Neighbors update debug</li>
+<li>Pathfinding debug</li>
+<li>Solid face debug</li>
+<li>Random tick range</li>
+<li>Region file boundaries</li>
+<li>Slime chunks</li>
+<li>Spawnable column heights</li>
+<li>Spawn chunks</li>
+</ul>
+`minihud
+`1
+`4
+~
+
+appleskin
+`Better Food UI
+`The stats of a food will be displayed as the item's tooltip.
+<img src="https://camo.githubusercontent.com/61132c47ef7a1f43467d66f419df44bacf8d55c0/687474703a2f2f692e696d6775722e636f6d2f6675726f4141692e706e67">
+Your saturation level will be visualised in the hunger bar.
+<img src="https://camo.githubusercontent.com/bde4595cfdcdd4e16a4b65955e9c1453b431b797/687474703a2f2f7a697070792e6766796361742e636f6d2f5368696d6d6572696e67596561726c794369636164612e676966">
+`appleskin
+`3
+`1
+~
+
+inventory-preview
+`Inventory Preview
+`Hold shift while hovering over a map or shulker box in your inventory to view its content.
+`tweakeroo
+`1
+`1
+~
+
+inventory-peek
+`Inventory Peek
+`Peek into players' inventories while holding I. In singleplayer pressing the same hotkey will work for blocks and entities.
+`tweakeroo
+`1
+`1
+~
+
+inventory-management
+`Better Inventory Management
+`<ul>
+<li>When hovering over items you can scroll up and down to send single items up and down.</li>
+<li>When holding control you can move all stacks of the same type of item.</li>
+<li>When you're in scrollable inventories you can hold alt to prevent scrolling items.</li>
+<li>When you're sending items via shift-leftclick you can now hold both buttons to send all the stacks you're hovering over.</li>
+<li>Hold alt-leftclick to drop items quickly.</li>
+<li>When you're in the creative inventory and hover over the tab icons you can scroll through all the creative tabs and pages.</li>
+<li>In recipe books you can hover over the recipe grid to scroll through the pages and hover over the recipe group tabs to scroll through them.</li>
+<li>Sort inventories by clicking with your mouse wheel.<ul>
+    <li>By default sorts by raw id (will most likely group by mods and similar items).</li>
+    <li>Hold shift while clicking to sort by quantity.</li>
+    <li>Hold control while clicking to sort by alphabet.</li></ul></li>
+<li>Press the swap key in any inventory to swap with the offhand.</li>
+<li>Let your slots be automagically refilled from your inventory!</li>
+<li>Pick the matching tools for blocks by either sneaking while picking the block or by holding a tool (this is configurable).</li>
+<li>Right-click trades or recipes to directly apply the crafting. When holding shift it will craft/trade a full stack.</li>
+<li>Scroll between hotbars with down arrow and mouse wheel.</li>
+</ul>
+`mouse-wheelie,tweakeroo
+`1
+`1
+~
+
+bee-ui
+`View Honey And Bee Count Of A Nest/Hive
+`Hover over a bee nest or hive to view how many bees and how much honey is inside.
+<img src="https://media.forgecdn.net/attachments/274/614/beenfo-tooltip.png">
+Right click on a bee hive or nest to view how many bees are inside and how much honey it contains.
+<img src="https://media.forgecdn.net/attachments/302/351/screenshot_2020-07-13_11-13-48.png">
+`beenfo
+`3
+`1
+~
+
+client-optimisations
+`Client Side Optimisations
+`Applies various optimisations for the client that should massively improve FPS on dedicated GPUs.
+`sodium,phosphor,tweakeroo
+`1
+`0
+~
+
+server-optimisations
+`Server Side Optimisations
+`Applies various optimisations to the server that should improve server MSPT and stability. These optimisations also work in singleplayer.
+`lithium,phosphor
+`0
+`0
+~
+
+sheep-consistency
 `Accurate Shaved Sheep Colours
 `<img src="https://i.imgur.com/hPfME5T.png">
 Shaved sheep's wool colour will be accurate to their normal colour.
@@ -32,24 +152,6 @@ Adds a bamboo torch, spike, rod, block, ladder, fence, fence gate and fence wall
 `5
 ~
 
-beenfo-gui
-`Bee Nest/Hive Bee Count GUI
-`<img src="https://media.forgecdn.net/attachments/302/351/screenshot_2020-07-13_11-13-48.png">
-Right click on a bee hive or nest to view how many bees are inside and how much honey it contains.
-`beenfo
-`2
-`1
-~
-
-beenfo-tooltip
-`Bee Nest/Hive Bee Count Item Tooltip
-`<img src="https://media.forgecdn.net/attachments/274/614/beenfo-tooltip.png">
-Hover over a bee nest or hive to view how many bees and how much honey is inside.
-`beenfo
-`1
-`1
-~
-
 not-enough-crashes
 `Better Crash Handling
 `<img src="https://media.forgecdn.net/attachments/271/740/crash.png">
@@ -59,61 +161,11 @@ If your game crashes while playing, you will be sent back to the main menu inste
 `2
 ~
 
-sodium
-`Better FPS
-`<img src="https://i.imgur.com/KarVVbr.png">
-Optimises the game's rendering and massively improves FPS on dedicated GPUs.
-`sodium
-`1
-`0
-~
-
-mouse-wheelie
-`Better Inventory Management
-`<ul>
-<li>When hovering over items you can scroll up and down to send single items up and down.</li>
-<li>When holding control you can move all stacks of the same type of item.</li>
-<li>When you're in scrollable inventories you can hold alt to prevent scrolling items.</li>
-<li>When you're sending items via shift-leftclick you can now hold both buttons to send all the stacks you're hovering over.</li>
-<li>Hold alt-leftclick to drop items quickly.</li>
-<li>When you're in the creative inventory and hover over the tab icons you can scroll through all the creative tabs and pages.</li>
-<li>In recipe books you can hover over the recipe grid to scroll through the pages and hover over the recipe group tabs to scroll through them.</li>
-<li>Sort inventories by clicking with your mouse wheel<ul>
-    <li>By default sorts by raw id (will most likely group by mods and similar items)</li>
-    <li>Hold shift while clicking to sort by quantity</li>
-    <li>Hold control while clicking to sort by alphabet</li></ul></li>
-<li>Press the swap key in any inventory to swap with the offhand</li>
-<li>Let your slots be automagically refilled from your inventory!</li>
-<li>Pick the matching tools for blocks by either sneaking while picking the block or by holding a tool. (this is configurable)</li>
-<li>Right-click trades or recipes to directly apply the crafting. When holding shift it will craft/trade a full stack.</li>
-</ul>
-`mouse-wheelie
-`3
-`1
-~
-
-lithium
-`Better Server Performance
-`<img src="https://i.imgur.com/aPu88TC.png">
-Improve server MSPT and TPS through a number of optimisations without changing any mechanics.
-`lithium
-`0
-`0
-~
-
 command-macros
 `Bind Any Command To A Hotkey
 `<img src="https://raw.githubusercontent.com/kyrptonaught/CMDKeybinds/master/image.png">
 To add and edit macros go to Mods -> Command Macros and click the options icon in the top right.
 `command-macros
-`1
-`4
-~
-
-block-grid
-`Block Grid Overlay
-`Overlays a block grid. Toggleable with F3 + Y.
-`minihud
 `1
 `4
 ~
@@ -133,14 +185,6 @@ tweakChatTimestamp
 `tweakeroo
 `1
 `2
-~
-
-clientChunkEntityDupeFix
-`Chunk Entity Dupe Fix
-`Fixes an issue where the client would duplicate entities when recieving chunk packets.
-`tweakeroo
-`1
-`7
 ~
 
 colorful-campfire-smoke
@@ -190,28 +234,12 @@ tweakCustomFlatPresets
 `2
 ~
 
-debug-overlays
-`Debug Overlays
-`Adds the following debug overlays: chunk info, chunk occlusion, collision boxes, neighbors update, pathfinding, solid face, and water. These are each toggleable via a hotkey which can be bound at H + C -> Renderer Hotkeys.
-`minihud
-`1
-`4
-~
-
-profilerChartFix
-`Debug Profiler Chart Fix
-`Fixes the debug profiler chart that was broken in 1.14.4.
-`tweakeroo
-`1
-`7
-~
-
 disableBossFog
 `Disable Boss Fog
 `Disable the fog caused by bosses.
 `tweakeroo
 `1
-`1
+`0
 ~
 
 disableNetherFog
@@ -219,7 +247,7 @@ disableNetherFog
 `Does what it says on the tin.
 `tweakeroo
 `1
-`2
+`0
 ~
 
 disableRenderDistanceFog
@@ -227,7 +255,7 @@ disableRenderDistanceFog
 `Disables the fog at the edge of your render distance.
 `tweakeroo
 `1
-`2
+`0
 ~
 
 disableSlimeBlockSlowdown
@@ -263,37 +291,12 @@ Integration with Discord Rich Presence.
 `2
 ~
 
-elytraFix
-`Elytra Deployment/Landing Fix
-`Fixes a bug with Elytra deployment and landing.
-`tweakeroo
-`1
-`7
-~
-
 tweakCommandBlockExtraFields
 `Extra Command Block Fields
 `Adds extra fields to the command block GUI which allow changing the name of the command block among other things.
 `tweakeroo
 `1
 `2
-~
-
-more-overlays
-`Extra Overlays
-`Adds the following overlays: random tick range, region file, slime chunks, spawnable column heights and spawn chunks. These are each toggleable via a hotkey which can be bound at H + C -> Renderer Hotkeys.
-`minihud
-`1
-`4
-~
-
-phosphor
-`Faster Chunk Loading
-`<img src="https://i.imgur.com/CoQk2e7.png">
-Optimises the lighting engine which allows the game to load chunks faster.
-`phosphor
-`2
-`0
 ~
 
 where-is-it
@@ -352,14 +355,6 @@ hide-tutorials
 `2
 ~
 
-tweakHotbarScroll
-`Hotbar Scrolling
-`Scroll between hotbars with down arrow.
-`tweakeroo
-`1
-`2
-~
-
 infinity-fix
 `Infinity Bows Don't Need Arrows
 `Infinity bows will still function without any arrows in the player's inventory.
@@ -374,14 +369,6 @@ tweakItemUnstackingProtection
 `tweakeroo
 `1
 `1
-~
-
-light-level
-`Light Level Overlay
-`Overlays block light level. Press F7 to toggle.
-`minihud
-`1
-`4
 ~
 
 mod-menu
@@ -417,14 +404,6 @@ gamemodeoverhaul
 `2
 ~
 
-tweakPlayerInventoryPeek
-`Player Inventory Peek
-`Hold I when looking at a player to preview their inventory.
-`tweakeroo
-`1
-`1
-~
-
 tweakPotionWarning
 `Potion Warning
 `Warns you if your potions are about to run out.
@@ -435,26 +414,10 @@ tweakPotionWarning
 
 fabric-chunk-pregenerator
 `Pregenerate Chunks
-`Use /pregen start <chunk-radius> to pregenerate areas.
+`Use /pregen start [chunk-radius] to pregenerate areas.
 `fabric-chunk-pregenerator
 `0
 `4
-~
-
-tweakInventoryPreview
-`Preview Block And Entity Inventories
-`Hold I when hovering over a block or entity to preview its inventory.
-`tweakeroo
-`4
-`2
-~
-
-tweakMapPreview
-`Preview Maps In Inventory
-`Hold shift over a map in your inventory to preview it.
-`tweakeroo
-`1
-`1
 ~
 
 tweakPrintDeathCoordinates
@@ -463,14 +426,6 @@ tweakPrintDeathCoordinates
 `tweakeroo
 `1
 `1
-~
-
-ravagerClientBlockBreakFix
-`Ravager Client Block Breaking Fix
-`Stops ravagers from breaking blocks on the client which prevents ghost blocks and desync.
-`tweakeroo
-`1
-`7
 ~
 
 tweakLavaVisibility
@@ -507,22 +462,6 @@ screenshot-to-clipboard
 `2
 ~
 
-tweakShulkerBoxDisplay
-`Shulker Box Preview
-`Preview the content of a shulker box in you inventory by holding shift over it.
-`tweakeroo
-`1
-`2
-~
-
-structure-overlay
-`Structure Bounding Box Overlay
-`Displays the borders of structures upon pressing F3 + J.
-`minihud
-`1
-`4
-~
-
 tweakTabCompleteCoordinate
 `Tab Complete Coordinates
 `Uses the players position.
@@ -537,14 +476,6 @@ tweakSpectatorTeleport
 `tweakeroo
 `1
 `2
-~
-
-tileEntityUnloadOptimization
-`Tile Entity Unloading Optimisations
-`Optimises the unloading of tile entities. Can greatly improve performance if many tile entities are loading/unloading at once.
-`tweakeroo
-`1
-`0
 ~
 
 fake-sneaking
@@ -615,30 +546,12 @@ Supports basic math operations, exponents, sqrt() and basic trigonometry functio
 `4
 ~
 
-appleskin-food-stats
-`View Food Stats
-`<img src="https://camo.githubusercontent.com/61132c47ef7a1f43467d66f419df44bacf8d55c0/687474703a2f2f692e696d6775722e636f6d2f6675726f4141692e706e67">
-The stats of a food will be displayed as the item's tooltip.
-`appleskin
-`1
-`1
-~
-
 horse-stats-vanilla
 `View Horse Stats
 `<img src="https://media.forgecdn.net/attachments/268/918/donkey_inv.png">
 The running speed, jumping height and health of horses and donkeys are visible in their inventories.
 `horse-stats-vanilla
 `1
-`1
-~
-
-appleskin-saturation
-`View Your Saturation Level
-`<img src="https://camo.githubusercontent.com/bde4595cfdcdd4e16a4b65955e9c1453b431b797/687474703a2f2f7a697070792e6766796361742e636f6d2f5368696d6d6572696e67596561726c794369636164612e676966">
-Your saturation level will be visualised in the hunger bar.
-`appleskin
-`3
 `1
 ~
 
@@ -665,5 +578,5 @@ tweakZoom
 `Press Z to zoom.
 `tweakeroo
 `1
-`2
+`0
 ~
