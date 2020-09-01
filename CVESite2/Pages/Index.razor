@@ -5,7 +5,9 @@
 <div class="main">
     @if (Initialised)
     {
-        <CategoryElement Name="OptiFine Replacement + Extras" Category=@TweakCategory.OptiFineReplacement HoverOver=@(t => sidebar.HoverOver(t)) />
+        <Presets/>
+
+        <CategoryElement Name="OptiFine Replacement + Extra Optimisations" Category=@TweakCategory.OptiFineReplacement HoverOver=@(t => sidebar.HoverOver(t)) />
         <CategoryElement Name="Survival Quality Of Life" Category=@TweakCategory.SurvivalQoL HoverOver=@(t => sidebar.HoverOver(t)) />
         <CategoryElement Name="General Quality Of Life" Category=@TweakCategory.GeneralQoL HoverOver=@(t => sidebar.HoverOver(t)) />
         <CategoryElement Name="Redstone" Category=@TweakCategory.Redstone HoverOver=@(t => sidebar.HoverOver(t)) />

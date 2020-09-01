@@ -53,7 +53,7 @@ namespace CVESite2
             new CurseforgeMod("euclid", 335863, 2996712, DefaultConfig, FabricAPI),
             new CurseforgeMod("litematica", 308892, 3002065, DefaultConfig, MaLiLib),
             new CurseforgeMod("i-am-very-smart", 318163, 2992677, t => ModConfig.IAmVerySmart(t), FabricAPI, DataLoader),
-            new CurseforgeMod("chatcalc", 374453, 2992187, t => ModConfig.ChatCalc(t), FabricAPI),
+            new CurseforgeMod("chatcalc", 374453, 2992187, t => ModConfig.ChatCalc(t), FabricAPI, ModMenu),
             new CurseforgeMod("tweakeroo", 297344, 2993146, t => ModConfig.Tweakeroo(t), MaLiLib),
             new CurseforgeMod("minihud", 244260, 2993429, t => ModConfig.MiniHUD(t), MaLiLib)
         };

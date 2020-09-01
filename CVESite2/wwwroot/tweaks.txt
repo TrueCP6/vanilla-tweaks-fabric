@@ -91,7 +91,7 @@ inventory-management
 `1
 ~
 
-bee-ui
+beenfo
 `View Honey And Bee Count Of A Nest/Hive
 `Hover over a bee nest or hive to view how many bees and how much honey is inside.
 <img src="https://media.forgecdn.net/attachments/274/614/beenfo-tooltip.png">

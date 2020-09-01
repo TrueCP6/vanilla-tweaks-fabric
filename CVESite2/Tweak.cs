@@ -96,5 +96,11 @@ namespace CVESite2
                     chosen.Add(t);
             return chosen.ToArray();
         }
+
+        public static void LoadPreset(string[] tweakReferences)
+        {
+            foreach (string reference in tweakReferences)
+                Dict[reference] = true;
+        }
     }
 }
