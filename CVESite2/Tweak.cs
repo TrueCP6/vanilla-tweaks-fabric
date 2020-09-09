@@ -88,14 +88,7 @@ namespace CVESite2
         public static string GetStyle(string reference) =>
             Dict[reference] ? "background-color: #264d00;" : "background-color: #800000;";
 
-        public static Tweak[] GetAllEnabled()
-        {
-            List<Tweak> chosen = new List<Tweak>();
-            foreach (Tweak t in All)
-                if (Dict[t.Reference])
-                    chosen.Add(t);
-            return chosen.ToArray();
-        }
+        public static Tweak[] GetAllEnabled() => All.Where(t => Dict[t.Reference]).ToArray();
 
         public static void LoadPreset(string[] tweakReferences)
         {

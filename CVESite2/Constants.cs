@@ -10,8 +10,13 @@ namespace CVESite2
         public const string MinecraftVersion = "1.16.1";
         public const string ForgeLoader = "forge-32.0.99";
         public const string FabricLoader = "fabric-0.9.2+build.206";
+        public const string FabricInstaller = "0.6.1.51";
         public const string Author = "TrueCP5";
         public const Formatting DefaultFormatting = Formatting.Indented;
+
+        public const string CORSAnywhere = "https://cors-anywhere.herokuapp.com/";
+        public const string BaseAPIURL = CORSAnywhere + "https://addons-ecs.forgesvc.net/api/v2/addon/";
+        public static string FabricInstallerURL => CORSAnywhere + $"{"https"}://maven.fabricmc.net/net/fabricmc/fabric-installer/{FabricInstaller}/fabric-installer-{FabricInstaller}.jar";
 
         public static readonly string[] VanillaPurist = new string[] {
             "client-optimisations",
@@ -42,7 +47,8 @@ namespace CVESite2
             "client-fixes",
             "sheep-consistency",
             "horse-stats-vanilla",
-            "beenfo"
+            "beenfo",
+            "mod-menu"
         };
     }
 }

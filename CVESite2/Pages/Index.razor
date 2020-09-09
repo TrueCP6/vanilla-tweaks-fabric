@@ -7,17 +7,18 @@
     {
         <Presets/>
 
-        <CategoryElement Name="OptiFine Replacement + Extra Optimisations" Category=@TweakCategory.OptiFineReplacement HoverOver=@(t => sidebar.HoverOver(t)) />
-        <CategoryElement Name="Survival Quality Of Life" Category=@TweakCategory.SurvivalQoL HoverOver=@(t => sidebar.HoverOver(t)) />
-        <CategoryElement Name="General Quality Of Life" Category=@TweakCategory.GeneralQoL HoverOver=@(t => sidebar.HoverOver(t)) />
-        <CategoryElement Name="Redstone" Category=@TweakCategory.Redstone HoverOver=@(t => sidebar.HoverOver(t)) />
-        <CategoryElement Name="Tools" Category=@TweakCategory.Tools HoverOver=@(t => sidebar.HoverOver(t)) />
-        <CategoryElement Name="Fixes" Category=@TweakCategory.Fixes HoverOver=@(t => sidebar.HoverOver(t)) />
-        <CategoryElement Name="Aesthetic" Category=@TweakCategory.Aesthetic HoverOver=@(t => sidebar.HoverOver(t)) />
-        <CategoryElement Name="Vanilla Plus" Category=@TweakCategory.VanillaPlus HoverOver=@(t => sidebar.HoverOver(t)) />
+        <CategoryElement Name="OptiFine Replacement + Extra Optimisations" Category=@TweakCategory.OptiFineReplacement HoverOver=@HoverOver />
+        <CategoryElement Name="Survival Quality Of Life" Category=@TweakCategory.SurvivalQoL HoverOver=@HoverOver />
+        <CategoryElement Name="General Quality Of Life" Category=@TweakCategory.GeneralQoL HoverOver=@HoverOver />
+        <CategoryElement Name="Redstone" Category=@TweakCategory.Redstone HoverOver=@HoverOver />
+        <CategoryElement Name="Tools" Category=@TweakCategory.Tools HoverOver=@HoverOver />
+        <CategoryElement Name="Fixes" Category=@TweakCategory.Fixes HoverOver=@HoverOver />
+        <CategoryElement Name="Aesthetic" Category=@TweakCategory.Aesthetic HoverOver=@HoverOver />
+        <CategoryElement Name="Vanilla Plus" Category=@TweakCategory.VanillaPlus HoverOver=@HoverOver />
 
         <button @onclick="DownloadForgeOnlyInstance" class="btn-primary">Download For Forge Only</button>
         <button @onclick="DownloadFabricSupportingInstance" class="btn-primary">Download For Fabric Supporting</button>
+        <button @onclick="DownloadServerPack" class="btn-primary">Download Server Pack</button>
     }
     else
     {
@@ -30,6 +31,8 @@
 @code {
     private bool Initialised = false;
     private Sidebar sidebar;
+    private Action<Tweak> HoverOver => tweak => sidebar.HoverOver(tweak);
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -37,9 +40,16 @@
         Tweak.All = Tweak.ParseFromText(tweaks).OrderBy(t => t.Name).ToArray();
         foreach (Tweak t in Tweak.All)
             Tweak.Dict.Add(t.Reference, false);
+        Initialised = true;
+        LowPriotityInitialise();
+    }
+
+    private async Task LowPriotityInitialise()
+    {
         ModConfig.MiniHUDDefault = await Http.GetStringAsync("DefaultModConfigs/minihud.json");
         ModConfig.TweakerooDefault = await Http.GetStringAsync("DefaultModConfigs/tweakeroo.json");
-        Initialised = true;
+        await CurseforgeMod.SetModThumbnails(Http);
+        StateHasChanged();
     }
 
     private void DownloadForgeOnlyInstance() => DownloadInstance(Constants.ForgeLoader);
@@ -47,9 +57,14 @@
 
     private void DownloadInstance(string modLoader)
     {
-        byte[] content = InstanceBuilder.Build(Constants.Name, Constants.ProfileVersion, Constants.Author, Constants.MinecraftVersion, modLoader, Tweak.GetAllEnabled());
-        Console.WriteLine("Created instance");
+        byte[] content = InstanceBuilder.Build(modLoader, Tweak.GetAllEnabled());
         DownloadFile(Constants.Name + ".zip", content); //this is async but thats fine
+    }
+
+    private async void DownloadServerPack()
+    {
+        byte[] content = await InstanceBuilder.BuildServerPack(Http, Constants.FabricLoader, Tweak.GetAllEnabled());
+        DownloadFile(Constants.Name + " Server Pack.zip", content); //this is async but thats fine
     }
 
     private async Task DownloadFile(string name, byte[] content)

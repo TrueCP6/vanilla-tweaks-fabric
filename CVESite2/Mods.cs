@@ -21,7 +21,7 @@ namespace CVESite2
         private static readonly CurseforgeMod DataLoader =
             new CurseforgeMod("data-loader", 318894, 2989927, DefaultConfig, FabricAPI);
 
-        public static readonly CurseforgeMod[] All = new CurseforgeMod[] {
+        public static CurseforgeMod[] All = new CurseforgeMod[] {
             ModMenu, DataLoader,
             new CurseforgeMod("mouse-wheelie", 317514, 2996961, DefaultConfig),
             new CurseforgeMod("worldedit", 225608, 3028436, DefaultConfig),
