@@ -13,10 +13,10 @@ namespace CVESite2
 {
     public class InstanceBuilder
     {
-        public static async Task<byte[]> BuildServerPack(HttpClient client, string modLoader, params Tweak[] tweaks)
+        public static async Task<byte[]> BuildServerPack(HttpClient client, Tweak[] tweaks)
         {
             tweaks = tweaks.Where(t => t.Type != TweakType.Client && t.Type != TweakType.SingleplayerOnly).ToArray();
-            CurseforgeMod[] mods = GetModList(modLoader, tweaks);
+            CurseforgeMod[] mods = GetModList(Constants.FabricLoader, tweaks);
             List<(string File, byte[] Content)> entries = GetConfigEntries(tweaks, mods).ToList();
             Console.WriteLine("Added synchronous entries");
 
@@ -33,14 +33,18 @@ namespace CVESite2
 
         public static async Task<(string File, byte[] Content)[]> GetServerStartEntries(HttpClient client)
         {
-            byte[] installer = await client.GetByteArrayAsync(Constants.FabricInstallerURL);
-            byte[] setup = Encoding.UTF8.GetBytes($"java -jar fabric-installer.jar server -mcversion {Constants.MinecraftVersion} -loader {Constants.FabricLoader.Replace("fabric-", "")} -downloadMinecraft");
+            const string installerName = "fabric-installer.jar";
+            const string shellSetup = "initial-setup.sh";
+            const string batSetup = "initial-setup.bat";
+
+            string installerArgs = $"java -jar fabric-installer.jar server -mcversion {Constants.MinecraftVersion} -loader {Constants.FabricLoader.Replace("fabric-", "")} -downloadMinecraft";
+            
             string start = "java -jar fabric-server-launch.jar nogui";
             return new (string File, byte[] Content)[]
             {
-                ("fabric-installer.jar", installer),
-                ("initial-setup.sh", setup),
-                ("initial-setup.bat", setup),
+                (installerName, await client.GetByteArrayAsync(Constants.FabricInstallerURL)),
+                (shellSetup, Encoding.UTF8.GetBytes(installerArgs + Environment.NewLine + string.Join(Environment.NewLine, new string[] { installerName, batSetup, shellSetup }.Select(s => "rm "+s)))),
+                (batSetup, Encoding.UTF8.GetBytes(installerArgs + Environment.NewLine + string.Join(Environment.NewLine, new string[] { installerName, shellSetup, batSetup }.Select(s => "del "+s)))),
                 ("start-server.sh", Encoding.UTF8.GetBytes(start)),
                 ("start-server.bat", Encoding.UTF8.GetBytes(start + Environment.NewLine + "pause")),
                 ("eula.txt", Encoding.UTF8.GetBytes("eula=true"))

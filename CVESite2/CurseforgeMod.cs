@@ -55,6 +55,7 @@ namespace CVESite2
                 tasks[i] = Mods.All[i].GetThumbnailURL(client);
             for (int i = 0; i < Mods.All.Length; i++)
                 Mods.All[i].ThumbnailURL = await tasks[i];
+            Console.WriteLine("Set mod thumbnails");
         }
     }
 

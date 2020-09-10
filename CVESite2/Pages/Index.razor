@@ -63,12 +63,13 @@
 
     private async void DownloadServerPack()
     {
-        byte[] content = await InstanceBuilder.BuildServerPack(Http, Constants.FabricLoader, Tweak.GetAllEnabled());
+        byte[] content = await InstanceBuilder.BuildServerPack(Http, Tweak.GetAllEnabled());
         DownloadFile(Constants.Name + " Server Pack.zip", content); //this is async but thats fine
     }
 
     private async Task DownloadFile(string name, byte[] content)
     {
         await js.InvokeAsync<object>("saveAsFile", name, Convert.ToBase64String(content));
+        Console.WriteLine("Started file download");
     }
 }

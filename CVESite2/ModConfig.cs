@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace CVESite2
 {
@@ -40,6 +41,7 @@ namespace CVESite2
 
         public static (string File, byte[] Content)[] Tweakeroo(string[] tweaks)
         {
+            SpinWait.SpinUntil(() => TweakerooDefault != null);
             string[] file = TweakerooDefault.Split(Environment.NewLine);
 
             //TODO: improve this
@@ -96,6 +98,7 @@ namespace CVESite2
 
         public static (string File, byte[] Content)[] MiniHUD(string[] tweaks)
         {
+            SpinWait.SpinUntil(() => MiniHUDDefault != null);
             dynamic config = JsonConvert.DeserializeObject(MiniHUDDefault);
 
             if (tweaks.Contains("mini-f3"))

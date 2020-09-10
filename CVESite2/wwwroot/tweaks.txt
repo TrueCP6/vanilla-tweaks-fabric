@@ -104,7 +104,7 @@ Right click on a bee hive or nest to view how many bees are inside and how much 
 
 client-optimisations
 `Client Side Optimisations
-`Applies various optimisations for the client that should massively improve FPS on dedicated GPUs.
+`Applies various optimisations to the client that massively improve FPS on dedicated GPUs.
 `sodium,phosphor,tweakeroo
 `1
 `0
@@ -112,7 +112,7 @@ client-optimisations
 
 server-optimisations
 `Server Side Optimisations
-`Applies various optimisations to the server that should improve server MSPT and stability. These optimisations also work in singleplayer.
+`Applies various optimisations to the server that improve server MSPT and stability. These optimisations also work in singleplayer.
 `lithium,phosphor
 `0
 `0
@@ -355,10 +355,10 @@ hide-tutorials
 `2
 ~
 
-infinity-fix
+bow-infinity-fix
 `Infinity Bows Don't Need Arrows
 `Infinity bows will still function without any arrows in the player's inventory.
-`infinity-fix
+`bow-infinity-fix
 `1
 `1
 ~
