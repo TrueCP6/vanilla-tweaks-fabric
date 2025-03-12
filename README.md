@@ -1,7 +1,8 @@
 # vanilla-tweaks-fabric
-TODO: add description
+An unfinished website that allows the extremely simple creation of a custom Minecraft Fabric client that is compatible with vanilla servers. The user can easily select all the tweaks and features they would like and deselect any they wouldn't like. They can then download that custom client and quickly import it into CurseForge or another type of modded client manager.
 
-TODO: come up with better name
+A very rudimentary interface has been implemented but all functionality works as intended
+![image](https://i.imgur.com/Oxwv0EF.png)
 
 # How to contribute
 vanilla-tweaks-fabric is made with Blazor, which is essentially C# integrated with HTML and CSS. This project runs on WebAssembly in the browser.
